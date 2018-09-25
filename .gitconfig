@@ -1,0 +1,16 @@
+[user]
+  name = "Kevin van der Burgt"
+  email = "kevin@zdev.com"
+  username = kevinvdburgt
+
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore
+
+[alias]
+  a = add --all
+  c = commit
+  ca = commit -a
+  cm = commit -m
+  cam = commit -am
+
