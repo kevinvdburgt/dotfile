@@ -1,6 +1,6 @@
 [user]
-  name = "Kevin van der Burgt"
-  email = "kevin@zdev.com"
+	name = Kevin van der Burgt
+	email = kevin@zdev.com
   username = kevinvdburgt
 
 [core]
@@ -14,3 +14,12 @@
   cm = commit -m
   cam = commit -am
 
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[push]
+	default = current
+[pull]
+	default = current
