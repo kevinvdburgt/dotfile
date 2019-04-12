@@ -1,0 +1,9 @@
+# OSX Related files and folders
+.DS_Store
+.DS_Store?
+_.*
+.Spotlight-V100
+.Trashes
+ehtumbs.db
+Thumbs.db
+
