@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# BSPWM workspaces
+i=0
+for monitor in $(bspc query -M); do
+  bspc monitor $monitor -n "${i}" -d "One" "Two" "Three"
+  let i++
+done
+unset i
