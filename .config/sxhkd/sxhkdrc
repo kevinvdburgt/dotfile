@@ -7,8 +7,12 @@ super + Return
 	urxvt
 
 # program launcher
+super + d
+	rofi -show run
+
+# program switcher
 super + @space
-	dmenu_run
+	rofi -show window
 
 # make sxhkd reload its configuration files:
 super + Escape

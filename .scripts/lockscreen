@@ -1,0 +1,6 @@
+#!/bin/bash
+
+scrot /tmp/lockbg.png -e 'convert -blur 0x8 $f /tmp/lockbg.png'
+convert -gravity center -composite /tmp/lockbg.png $HOME/dotfiles/assets/archlinux.png /tmp/lockbg.png
+i3lock -f -i /tmp/lockbg.png
+

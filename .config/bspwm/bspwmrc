@@ -30,6 +30,7 @@ unset i
 # Run some scripts after starting bspwm
 feh --bg-fill $HOME/.config/wallpaper.jpg &
 compton --config $HOME/.config/compton.conf &
+dunst &
 
 
 # bspc monitor -d I II III IV V VI VII VIII IX X
