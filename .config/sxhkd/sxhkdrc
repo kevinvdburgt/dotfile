@@ -1,24 +1,4 @@
 #
-# wm independent hotkeys
-#
-
-# terminal emulator
-super + Return
-	urxvt
-
-# program launcher
-super + d
-	rofi -show run
-
-# program switcher
-super + @space
-	rofi -show window
-
-# make sxhkd reload its configuration files:
-super + Escape
-	pkill -USR1 -x sxhkd
-
-#
 # bspwm hotkeys
 #
 
@@ -123,3 +103,50 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+##########################################
+# bspwm hotkeys                          #
+##########################################
+
+# Increase/decrease window gap
+super + alt + bracket{left,right}
+	bspc config window_gap $((`bspc config window_gap` {-,+} 5 ))
+
+##########################################
+# sxhkd hotkeys                          #
+##########################################
+
+# Make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+##########################################
+# application launch hotkeys             #
+##########################################
+
+# terminal emulator
+super + Return
+	urxvt
+
+# program switcher
+super + z
+	rofi -show window
+
+# program launcher
+super + @space
+	rofi -show run
+
+##########################################
+# Media hotkeys                          #
+##########################################
+
+# Raise the volume of the default card (use shift to small adjustments):
+XF86AudioRaiseVolume + {_,shift}
+    ponymix increase {5,1} && dunstify -a "changeVolume" -u low -r "3945" "Volume: $(ponymix get-volume)%" "$(getProgressString 20 "#" "-" $(ponymix get-volume))"
+
+# Lower the volume of the default card (use shift to small adjustments):
+XF86AudioLowerVolume + {_,shift}
+    ponymix decrease {5,1} && dunstify -a "changeVolume" -u low -r "3945" "Volume: $(ponymix get-volume)%" "$(getProgressString 20 "#" "-" $(ponymix get-volume))"
+
+XF86AudioMute
+    ponymix toggle && dunstify -a "changeVolume" -u low -r "3945" "Volume: $(ponymix get-volume)%" "$(getProgressString 20 "#" "-" $(ponymix get-volume))"
